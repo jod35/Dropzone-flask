@@ -27,8 +27,12 @@ def index():
 def upload_image():
     if request.files:
         image=request.files['file']
-        image.save(app.config['UPLOAD_PATH'],image.filename)
+        image.save(os.path.join(app.config['UPLOAD_PATH'],image.filename))
 
         return "FILE SAVED SUCESSFULLY"
 
     return redirect(url_for('index'))
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
