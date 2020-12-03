@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROPZONEJS FILE UPLOAD</title>
+    {{dz.load_css()}}
+</head>
+<body>
+    
+    {{dz.create(action=url_for('upload_image'))}}
+        <input type="file" name="file">
+    {{dz.config()}}
+    {{dz.load_js()}}
+</body>
+</html>
